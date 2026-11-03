@@ -1,6 +1,6 @@
 # Blog 9: Predicting Stock Returns with Gradient Boosting
 
-This project contains the code, saved market data, results, and figures for Blog 9. The article source remains in `website-recovered/blog/posts/post9/index.qmd`, following the same separation used for the earlier blog projects.
+This project contains the code, saved market data, results, and figures for Blog 9. The article is kept in the website project: see the [source file](https://github.com/emmazhu-collab/website/blob/main/blog/posts/post9/index.qmd) or the [published post](https://emmazhu-collab.github.io/website/blog/posts/post9/).
 
 The analysis compares a classroom-style XGBoost baseline, a shallower XGBoost model, and a zero-return forecast. It also compares top-10 portfolios from both XGBoost models with passive SPY.
 
@@ -39,7 +39,7 @@ blog9/
 
 ## Data and method
 
-The analysis uses daily prices for a 95-company stock universe based on the classroom experiment and for SPY. The saved snapshot in `data/source/yahoo_prices.csv` was downloaded from Yahoo Finance through `tidyquant`; `SOURCE.txt` records the source, date, and requested time window. Keeping this snapshot makes the analysis reproducible without downloading data again. A fresh download can differ if the provider revises historical prices. The saved adjusted prices are not a point-in-time archive.
+The analysis uses daily prices for a 95-company stock universe based on the classroom experiment and for SPY. The ticker list is not identical to the professor's reference script. The saved snapshot in `data/source/yahoo_prices.csv` was downloaded from Yahoo Finance through `tidyquant`; `SOURCE.txt` records the source, date, and requested time window. Keeping this snapshot makes the analysis reproducible without downloading data again. A fresh download can differ if the provider revises historical prices. The saved adjusted prices are not a point-in-time archive.
 
 The R script prepares market predictors, fits both models, evaluates predictions on the same later test observations, builds the portfolios, and saves tables and figures in `results/`. The baseline reproduces the classroom model's main settings as a new implementation; it is not guaranteed to match every default of the original `parsnip` workflow. The improvement changes tree depth from 5 to 2 and minimum child weight from 10 to 50.
 
